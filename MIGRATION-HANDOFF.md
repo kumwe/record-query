@@ -60,13 +60,13 @@ This candidate contains runtime implementation and package-owned tests. Publicat
     "examined_dependencies": [
       {
         "package": "kumwe/record-values",
-        "constraint": "dev-agent/extraction-v2-business-data",
+        "constraint": "dev-main",
         "independently_verified": false,
         "attestation": null
       },
       {
         "package": "kumwe/business-definition",
-        "constraint": "dev-agent/candidate-sequence-dependency-v2",
+        "constraint": "dev-main",
         "independently_verified": false,
         "attestation": null
       },
@@ -78,18 +78,17 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       }
     ],
     "active_related_pull_requests": [
-      "https://github.com/kumwe/record-values/pull/1",
       "https://github.com/kumwe/business-schema/pull/1",
-      "https://github.com/kumwe/record-model/pull/1",
-      "https://github.com/kumwe/reporting/pull/1"
+      "https://github.com/kumwe/record-model/pull/2",
+      "https://github.com/kumwe/reporting/pull/2"
     ]
   },
   "target": {
     "repository": "https://github.com/kumwe/record-query",
     "artifact_identity": "kumwe/record-query",
     "canonical_namespace_or_abi": "Kumwe\\Record\\Query\\",
-    "branch": "agent/extraction-v2-business-data",
-    "pull_request": "https://github.com/kumwe/record-query/pull/1"
+    "branch": "agent/merged-dependency-coordinates-v2",
+    "pull_request": "https://github.com/kumwe/record-query/pull/2"
   },
   "ownership": {
     "responsibility": "Closed bounded business record query grammar, projections and deterministic canonicalization.",
