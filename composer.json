@@ -8,7 +8,7 @@
     "php": "^8.5",
     "php-64bit": "*",
     "ext-json": "*",
-    "kumwe/record-values": "dev-main",
+    "kumwe/record-values": "0.1.0",
     "kumwe/business-definition": "0.1.0",
     "kumwe/conversion": "0.1.0",
     "ext-mbstring": "*"
@@ -82,13 +82,5 @@
       "/composer.candidate.json",
       "/composer.candidate.lock"
     ]
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/record-values.git"
-    }
-  ],
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }

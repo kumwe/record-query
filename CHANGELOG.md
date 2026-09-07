@@ -1,13 +1,13 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 - 2026-09-07
 
-- Use published Business Definition 0.1.0 so the package composes with other stable definition consumers.
+- Use published Business Definition 0.1.0 and Record Values 0.1.0 with stable Composer resolution.
 
 ### Added
 
 - Closed bounded business record query grammar, projections and deterministic canonicalization.
 - NRM-2026-031: package extraction enabling the Version 2 migration. Roadmap impact: enables; no completion claim.
 
-Publication needs a recorded stable version and exact published upstream requirements.
-Independent attestations are optional evidence for later verification and adoption.
+Normal publication verifies exact stable dependency tag, source and dist identity.
+Independent attestations remain optional separate verification evidence.
