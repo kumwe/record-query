@@ -72,7 +72,12 @@ final class RecordQueryBoundaryTest extends TestCase
     public function testProjectionAndPageLimitsAreInclusiveAndDuplicatesCannotHideCost(): void
     {
         $this->assertSame(200, (new RecordQuerySpecification(pageSize: 200))->pageSize, 'Page bound is inclusive.');
-        $this->assertSame(['name'], (new RecordProjection(['name', 'name']))->fields, 'Projection deduplicates handles.');
+        $this->assertSame(
+            ['name'],
+            (new RecordProjection(['name',
+             'name']))->fields,
+            'Projection deduplicates handles.'
+        );
         $this->assertSame(64, count((new RecordProjection(array_map(
             static fn (int $i): string => 'f' . $i,
             range(1, 64)
@@ -157,7 +162,11 @@ final class RecordQueryBoundaryTest extends TestCase
             static fn () => new BooleanFilter(BooleanOperator::Not, [$foreign]),
             static fn () => new RelationFilter('owner', RelationQuantifier::Any, $foreign)] as $invalid
         ) {
-            $this->assertThrows($invalid, InvalidArgumentException::class, 'Foreign executable nodes are refused first.');
+            $this->assertThrows(
+                $invalid,
+                InvalidArgumentException::class,
+                'Foreign executable nodes are refused first.'
+            );
         }
     }
 }

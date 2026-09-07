@@ -1,0 +1,42 @@
+{
+  "schema": "kumwe-test-ownership/v1",
+  "package": "kumwe/record-query",
+  "tests": [
+    {
+      "path": "tests/Case/CanonicalSemanticsTest.php",
+      "methods": [
+        "testQueryDigestMatchesFrozenSdkBytes",
+        "testNarrowLiteralAdmissionPrecedesCanonicalRecordReduction"
+      ],
+      "implementation_owner": "kumwe/record-query"
+    },
+    {
+      "path": "tests/Case/RecordQueryBoundaryTest.php",
+      "methods": [
+        "testCursorBoundariesPreserveBytesWithoutClaimingAuthentication",
+        "testDigestExcludesOnlyCursorAndCanonicalizesSearchFieldOrder",
+        "testProjectionAndPageLimitsAreInclusiveAndDuplicatesCannotHideCost",
+        "testDepthRelationAndOperationBudgetsAreOwnedByTheGrammar",
+        "testForeignFilterCannotLieAboutItsComplexityOrExecuteCallbacks"
+      ],
+      "implementation_owner": "kumwe/record-query"
+    },
+    {
+      "path": "tests/Case/RecordQueryGrammarTest.php",
+      "methods": [
+        "testQueryValuesAreBoundedTypedScalars",
+        "testComparisonFilterRefusesApproximateAndNullLiterals",
+        "testBooleanFilterBoundsItsFanOut",
+        "testTextSetAndNullFiltersExportCanonically"
+      ],
+      "implementation_owner": "kumwe/record-query"
+    }
+  ],
+  "app_retains": [
+    "authorization and generation pinning",
+    "policy-before-query and SQL",
+    "persistence and transaction atomicity",
+    "delivery, export and operational recovery"
+  ],
+  "remove_duplicates_only_after_verified_adoption": true
+}
