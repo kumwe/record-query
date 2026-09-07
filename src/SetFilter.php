@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Record\Query;
 
+use Kumwe\Record\Query\Internal\ValueSnapshot;
 use InvalidArgumentException;
 
 /**
@@ -59,7 +60,7 @@ final readonly class SetFilter implements RecordFilter
             }
             QueryValue::assert($value);
         }
-        $this->values = array_values($values);
+        $this->values = ValueSnapshot::copy(array_values($values));
     }
 
     /**

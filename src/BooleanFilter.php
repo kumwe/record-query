@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Record\Query;
 
+use Kumwe\Record\Query\Internal\ValueSnapshot;
 use InvalidArgumentException;
 
 /**
@@ -57,7 +58,7 @@ final readonly class BooleanFilter implements RecordFilter
             QueryGraphGuard::filter($child);
             $validated[] = $child;
         }
-        $this->children = $validated;
+        $this->children = ValueSnapshot::copy($validated);
     }
 
     /**

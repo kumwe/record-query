@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Record\Query;
 
+use Kumwe\Record\Query\Internal\ValueSnapshot;
 use InvalidArgumentException;
 
 /**
@@ -56,7 +57,7 @@ final readonly class RecordSearch
         }
         $fields = array_values(array_unique($fields));
         sort($fields, SORT_STRING);
-        $this->fields = $fields;
+        $this->fields = ValueSnapshot::copy($fields);
     }
 
     /**
