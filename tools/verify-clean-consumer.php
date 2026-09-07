@@ -83,4 +83,4 @@ file_put_contents($temporary . '/verify.php', $check);
 $run([PHP_BINARY, $temporary . '/verify.php', $temporary . '/vendor/autoload.php',
     $installed . '/resources/public-api/v1.json'], $temporary);
 echo 'Archive SHA-256: ' . hash_file('sha256', $temporary . '/package.zip') . "\n";
-echo "Archive dependency consumer passed; immutable release attestation remains separate.\n";
+echo "Archive dependency consumer passed; independent release verification remains separate.\n";
