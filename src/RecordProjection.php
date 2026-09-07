@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Record\Query;
 
+use Kumwe\Record\Query\Internal\ValueSnapshot;
 use InvalidArgumentException;
 
 /**
@@ -82,9 +83,9 @@ final readonly class RecordProjection
             }
             $aliases[$aggregate->alias] = true;
         }
-        $this->fields = array_values(array_unique($fields));
-        $this->includes = array_values(array_unique($includes));
-        $this->aggregates = array_values($aggregates);
+        $this->fields = ValueSnapshot::copy(array_values(array_unique($fields)));
+        $this->includes = ValueSnapshot::copy(array_values(array_unique($includes)));
+        $this->aggregates = ValueSnapshot::copy(array_values($aggregates));
     }
 
     /**

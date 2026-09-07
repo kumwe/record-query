@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Record\Query;
 
+use Kumwe\Record\Query\Internal\ValueSnapshot;
 use InvalidArgumentException;
 use Kumwe\BusinessDefinition\Domain\CanonicalDefinitionJson;
 
@@ -97,7 +98,7 @@ final readonly class RecordQuerySpecification
             }
             $seenSorts[$sort->field] = true;
         }
-        $this->sorts = array_values($sorts);
+        $this->sorts = ValueSnapshot::copy(array_values($sorts));
         $this->projection = $projection ?? new RecordProjection();
     }
 

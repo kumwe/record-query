@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Record\Query;
 
+use Kumwe\Record\Query\Internal\ValueSnapshot;
 use InvalidArgumentException;
 
 /**
@@ -67,7 +68,7 @@ final readonly class CursorPosition
         foreach ($sortValues as $value) {
             QueryValue::assert($value);
         }
-        $this->sortValues = array_values($sortValues);
+        $this->sortValues = ValueSnapshot::copy(array_values($sortValues));
     }
 
     /**

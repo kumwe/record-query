@@ -62,4 +62,19 @@ final class CanonicalSemanticsTest extends TestCase
             'The query digest refuses strings that canonical JSON cannot encode.'
         );
     }
+    public function testQueryCollectionsCannotChangeAfterAdmission(): void
+    {
+        $value = 'approved';
+        $filter = new \Kumwe\Record\Query\SetFilter('status', [&$value]);
+        $sort = new \Kumwe\Record\Query\RecordSort('status');
+        $specification = new \Kumwe\Record\Query\RecordQuerySpecification(filter: $filter, sorts: [&$sort]);
+        $before = $specification->toArray();
+        $value = 1.25;
+        $sort = new \Kumwe\Record\Query\RecordSort('secret');
+        $this->assertSame(
+            $before,
+            $specification->toArray(),
+            'Caller references cannot alter admitted query values or disclosure.'
+        );
+    }
 }
