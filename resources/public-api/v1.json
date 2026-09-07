@@ -1,21 +1,31 @@
 {
-    "schema": "kumwe-public-api/v1",
+    "schema": "kumwe-package-public-api/v1",
     "package": "kumwe/record-query",
     "release": "0.1.1",
     "namespace": "Kumwe\\Record\\Query\\",
-    "symbols": [
-        {
-            "name": "Kumwe\\Record\\Query\\AggregateFunction",
+    "symbols": {
+        "Kumwe\\Record\\Query\\AggregateFunction": {
+            "stability": "stable",
+            "file": "src/AggregateFunction.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -23,13 +33,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -37,38 +47,57 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Count",
-                "Sum",
-                "Minimum",
-                "Maximum",
-                "Average"
-            ]
+            },
+            "constants": {
+                "Count": {
+                    "type": null
+                },
+                "Sum": {
+                    "type": null
+                },
+                "Minimum": {
+                    "type": null
+                },
+                "Maximum": {
+                    "type": null
+                },
+                "Average": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Record\\Query\\BooleanFilter",
+        "Kumwe\\Record\\Query\\BooleanFilter": {
+            "stability": "stable",
+            "file": "src/BooleanFilter.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Record\\Query\\RecordFilter"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -76,69 +105,79 @@
                             "type": "Kumwe\\Record\\Query\\BooleanOperator",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "children",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "children",
+            },
+            "properties": {
+                "children": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "operator",
+                "operator": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\BooleanOperator",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\BooleanOperator",
+        "Kumwe\\Record\\Query\\BooleanOperator": {
+            "stability": "stable",
+            "file": "src/BooleanOperator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -146,13 +185,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -160,84 +199,120 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "All",
-                "Any",
-                "Not"
-            ]
+            },
+            "constants": {
+                "All": {
+                    "type": null
+                },
+                "Any": {
+                    "type": null
+                },
+                "Not": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Record\\Query\\BusinessRecordCursor",
+        "Kumwe\\Record\\Query\\BusinessRecordCursor": {
+            "stability": "stable",
+            "file": "src/BusinessRecordCursor.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "value",
+            "methods": {
+                "value": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\BusinessRecordSearch",
+        "Kumwe\\Record\\Query\\BusinessRecordSearch": {
+            "stability": "stable",
+            "file": "src/BusinessRecordSearch.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "toArray",
+            "methods": {
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\BusinessRecordSort",
+        "Kumwe\\Record\\Query\\BusinessRecordSort": {
+            "stability": "stable",
+            "file": "src/BusinessRecordSort.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "field",
+            "methods": {
+                "field": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\ComparisonFilter",
+        "Kumwe\\Record\\Query\\ComparisonFilter": {
+            "stability": "stable",
+            "file": "src/ComparisonFilter.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Record\\Query\\RecordFilter"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -245,81 +320,91 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "operator",
                             "type": "Kumwe\\Record\\Query\\ComparisonOperator",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "value",
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "field",
+            },
+            "properties": {
+                "field": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "operator",
+                "operator": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\ComparisonOperator",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "mixed",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\ComparisonOperator",
+        "Kumwe\\Record\\Query\\ComparisonOperator": {
+            "stability": "stable",
+            "file": "src/ComparisonOperator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -327,13 +412,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -341,39 +426,58 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Equal",
-                "NotEqual",
-                "LessThan",
-                "LessThanOrEqual",
-                "GreaterThan",
-                "GreaterThanOrEqual"
-            ]
+            },
+            "constants": {
+                "Equal": {
+                    "type": null
+                },
+                "NotEqual": {
+                    "type": null
+                },
+                "LessThan": {
+                    "type": null
+                },
+                "LessThanOrEqual": {
+                    "type": null
+                },
+                "GreaterThan": {
+                    "type": null
+                },
+                "GreaterThanOrEqual": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Record\\Query\\CursorPosition",
+        "Kumwe\\Record\\Query\\CursorPosition": {
+            "stability": "stable",
+            "file": "src/CursorPosition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -381,57 +485,66 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sortValues",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "recordKey",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "sortValues",
+            },
+            "properties": {
+                "sortValues": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "specificationDigest",
+                "specificationDigest": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "recordKey",
+                "recordKey": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\NullFilter",
+        "Kumwe\\Record\\Query\\NullFilter": {
+            "stability": "stable",
+            "file": "src/NullFilter.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Record\\Query\\RecordFilter"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -439,63 +552,70 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "isNull",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "field",
+            },
+            "properties": {
+                "field": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "isNull",
+                "isNull": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\QueryCanonicalizer",
+        "Kumwe\\Record\\Query\\QueryCanonicalizer": {
+            "stability": "stable",
+            "file": "src/QueryCanonicalizer.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "value",
+            "methods": {
+                "value": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -503,21 +623,28 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "mixed"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\QueryIdentifier",
+        "Kumwe\\Record\\Query\\QueryIdentifier": {
+            "stability": "stable",
+            "file": "src/QueryIdentifier.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "assertField",
+            "methods": {
+                "assertField": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -525,21 +652,28 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\QueryValue",
+        "Kumwe\\Record\\Query\\QueryValue": {
+            "stability": "stable",
+            "file": "src/QueryValue.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "assert",
+            "methods": {
+                "assert": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -547,13 +681,13 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 },
-                {
-                    "name": "canonical",
+                "canonical": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -561,21 +695,28 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "mixed"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordAggregate",
+        "Kumwe\\Record\\Query\\RecordAggregate": {
+            "stability": "stable",
+            "file": "src/RecordAggregate.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -583,57 +724,66 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "function",
                             "type": "Kumwe\\Record\\Query\\AggregateFunction",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "field",
                             "type": "?string",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "alias",
+            },
+            "properties": {
+                "alias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "function",
+                "function": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\AggregateFunction",
                     "readonly": true
                 },
-                {
-                    "name": "field",
+                "field": {
+                    "static": false,
                     "type": "?string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordCursor",
+        "Kumwe\\Record\\Query\\RecordCursor": {
+            "stability": "stable",
+            "file": "src/RecordCursor.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Stringable"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "fromString",
+            "methods": {
+                "fromString": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -641,65 +791,79 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "Kumwe\\Record\\Query\\RecordCursor"
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "__toString",
+                "__toString": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordFilter",
+        "Kumwe\\Record\\Query\\RecordFilter": {
+            "stability": "stable",
+            "file": "src/RecordFilter.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "toArray",
+            "methods": {
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordProjection",
+        "Kumwe\\Record\\Query\\RecordProjection": {
+            "stability": "stable",
+            "file": "src/RecordProjection.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -707,57 +871,64 @@
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "includes",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "aggregates",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "fields",
+            },
+            "properties": {
+                "fields": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "includes",
+                "includes": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "aggregates",
+                "aggregates": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordQuerySpecification",
+        "Kumwe\\Record\\Query\\RecordQuerySpecification": {
+            "stability": "stable",
+            "file": "src/RecordQuerySpecification.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -765,62 +936,62 @@
                             "type": "?Kumwe\\Record\\Query\\RecordFilter",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "search",
                             "type": "?Kumwe\\Record\\Query\\RecordSearch",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sorts",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "after",
                             "type": "?Kumwe\\Record\\Query\\RecordCursor",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "pageSize",
                             "type": "int",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "projection",
                             "type": "?Kumwe\\Record\\Query\\RecordProjection",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "includeArchived",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "includeDeleted",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -828,68 +999,75 @@
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "array"
                 },
-                {
-                    "name": "digest",
+                "digest": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "sorts",
+            },
+            "properties": {
+                "sorts": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "projection",
+                "projection": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\RecordProjection",
                     "readonly": true
                 },
-                {
-                    "name": "filter",
+                "filter": {
+                    "static": false,
                     "type": "?Kumwe\\Record\\Query\\RecordFilter",
                     "readonly": true
                 },
-                {
-                    "name": "search",
+                "search": {
+                    "static": false,
                     "type": "?Kumwe\\Record\\Query\\RecordSearch",
                     "readonly": true
                 },
-                {
-                    "name": "after",
+                "after": {
+                    "static": false,
                     "type": "?Kumwe\\Record\\Query\\RecordCursor",
                     "readonly": true
                 },
-                {
-                    "name": "pageSize",
+                "pageSize": {
+                    "static": false,
                     "type": "int",
                     "readonly": true
                 },
-                {
-                    "name": "includeArchived",
+                "includeArchived": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 },
-                {
-                    "name": "includeDeleted",
+                "includeDeleted": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordSearch",
+        "Kumwe\\Record\\Query\\RecordSearch": {
+            "stability": "stable",
+            "file": "src/RecordSearch.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -897,45 +1075,52 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "fields",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "fields",
+            },
+            "properties": {
+                "fields": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "term",
+                "term": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RecordSort",
+        "Kumwe\\Record\\Query\\RecordSort": {
+            "stability": "stable",
+            "file": "src/RecordSort.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -943,57 +1128,66 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "direction",
                             "type": "Kumwe\\Record\\Query\\SortDirection",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "nullsLast",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "field",
+            },
+            "properties": {
+                "field": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "direction",
+                "direction": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\SortDirection",
                     "readonly": true
                 },
-                {
-                    "name": "nullsLast",
+                "nullsLast": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RelationFilter",
+        "Kumwe\\Record\\Query\\RelationFilter": {
+            "stability": "stable",
+            "file": "src/RelationFilter.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Record\\Query\\RecordFilter"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1001,81 +1195,91 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "quantifier",
                             "type": "Kumwe\\Record\\Query\\RelationQuantifier",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "target",
                             "type": "Kumwe\\Record\\Query\\RecordFilter",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "relationship",
+            },
+            "properties": {
+                "relationship": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "quantifier",
+                "quantifier": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\RelationQuantifier",
                     "readonly": true
                 },
-                {
-                    "name": "target",
+                "target": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\RecordFilter",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\RelationQuantifier",
+        "Kumwe\\Record\\Query\\RelationQuantifier": {
+            "stability": "stable",
+            "file": "src/RelationQuantifier.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1083,13 +1287,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1097,36 +1301,51 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Any",
-                "None",
-                "All"
-            ]
+            },
+            "constants": {
+                "Any": {
+                    "type": null
+                },
+                "None": {
+                    "type": null
+                },
+                "All": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Record\\Query\\SetFilter",
+        "Kumwe\\Record\\Query\\SetFilter": {
+            "stability": "stable",
+            "file": "src/SetFilter.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Record\\Query\\RecordFilter"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1134,81 +1353,91 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "values",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "negated",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "values",
+            },
+            "properties": {
+                "values": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "field",
+                "field": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "negated",
+                "negated": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\SortDirection",
+        "Kumwe\\Record\\Query\\SortDirection": {
+            "stability": "stable",
+            "file": "src/SortDirection.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1216,13 +1445,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1230,35 +1459,48 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Ascending",
-                "Descending"
-            ]
+            },
+            "constants": {
+                "Ascending": {
+                    "type": null
+                },
+                "Descending": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Record\\Query\\TextFilter",
+        "Kumwe\\Record\\Query\\TextFilter": {
+            "stability": "stable",
+            "file": "src/TextFilter.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Record\\Query\\RecordFilter"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1266,81 +1508,91 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "operator",
                             "type": "Kumwe\\Record\\Query\\TextOperator",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "text",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "operationCount",
+                "operationCount": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "depth",
+                "depth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "relationDepth",
+                "relationDepth": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "field",
+            },
+            "properties": {
+                "field": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "operator",
+                "operator": {
+                    "static": false,
                     "type": "Kumwe\\Record\\Query\\TextOperator",
                     "readonly": true
                 },
-                {
-                    "name": "text",
+                "text": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Query\\TextOperator",
+        "Kumwe\\Record\\Query\\TextOperator": {
+            "stability": "stable",
+            "file": "src/TextOperator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1348,13 +1600,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1362,29 +1614,42 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Contains",
-                "StartsWith",
-                "EndsWith"
-            ]
+            },
+            "constants": {
+                "Contains": {
+                    "type": null
+                },
+                "StartsWith": {
+                    "type": null
+                },
+                "EndsWith": {
+                    "type": null
+                }
+            }
         }
-    ]
+    },
+    "extension_points": [
+        "Kumwe\\Record\\Query\\BusinessRecordCursor",
+        "Kumwe\\Record\\Query\\BusinessRecordSearch",
+        "Kumwe\\Record\\Query\\BusinessRecordSort",
+        "Kumwe\\Record\\Query\\RecordFilter"
+    ],
+    "digest_of": "src"
 }

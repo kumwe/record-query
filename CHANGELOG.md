@@ -2,6 +2,8 @@
 
 ## 0.1.1 - 2026-09-07
 
+- Ship consumer-readable v2 manifests and YAML handoff with package-local governance drift checks and refreshed App consumer inventory.
+
 - Detach filter sets, cursor positions, projections and sort collections from caller references so admitted queries and disclosure intent cannot change after validation.
 - Add package-owned regression tests and refresh extraction handoff, dependency and release documentation.
 - Keep exact stable dependency requirements; grouped weekly update PRs re-run the package gate.

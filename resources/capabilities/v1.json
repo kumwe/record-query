@@ -1,16 +1,52 @@
 {
-    "schema": "kumwe-capabilities/v1",
+    "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/record-query",
+    "release": "0.1.1",
+    "namespace": "Kumwe\\Record\\Query\\",
+    "responsibility": "Closed bounded business record query grammar, projections and deterministic canonicalization.",
+    "non_responsibilities": [
+        "Database execution, persistence, transactions and App orchestration.",
+        "Authorization and tenant authority remain host supplied."
+    ],
     "capabilities": [
         {
             "id": "record-query.portable-semantics",
-            "responsibility": "Closed bounded business record query grammar, projections and deterministic canonicalization.",
-            "implementation_owner": "kumwe/record-query",
+            "title": "Record Query portable semantics",
+            "description": "Closed bounded business record query grammar, projections and deterministic canonicalization.",
+            "symbols": [
+                "Kumwe\\Record\\Query\\AggregateFunction",
+                "Kumwe\\Record\\Query\\BooleanFilter",
+                "Kumwe\\Record\\Query\\BooleanOperator",
+                "Kumwe\\Record\\Query\\BusinessRecordCursor",
+                "Kumwe\\Record\\Query\\BusinessRecordSearch",
+                "Kumwe\\Record\\Query\\BusinessRecordSort",
+                "Kumwe\\Record\\Query\\ComparisonFilter",
+                "Kumwe\\Record\\Query\\ComparisonOperator",
+                "Kumwe\\Record\\Query\\CursorPosition",
+                "Kumwe\\Record\\Query\\NullFilter",
+                "Kumwe\\Record\\Query\\QueryCanonicalizer",
+                "Kumwe\\Record\\Query\\QueryIdentifier",
+                "Kumwe\\Record\\Query\\QueryValue",
+                "Kumwe\\Record\\Query\\RecordAggregate",
+                "Kumwe\\Record\\Query\\RecordCursor",
+                "Kumwe\\Record\\Query\\RecordFilter",
+                "Kumwe\\Record\\Query\\RecordProjection",
+                "Kumwe\\Record\\Query\\RecordQuerySpecification",
+                "Kumwe\\Record\\Query\\RecordSearch",
+                "Kumwe\\Record\\Query\\RecordSort",
+                "Kumwe\\Record\\Query\\RelationFilter",
+                "Kumwe\\Record\\Query\\RelationQuantifier",
+                "Kumwe\\Record\\Query\\SetFilter",
+                "Kumwe\\Record\\Query\\SortDirection",
+                "Kumwe\\Record\\Query\\TextFilter",
+                "Kumwe\\Record\\Query\\TextOperator"
+            ],
             "documentation": [
                 "docs/public-api.md",
                 "docs/architecture.md"
             ]
         }
     ],
-    "release_verified": false
+    "native_requirements": null,
+    "deprecations": []
 }
