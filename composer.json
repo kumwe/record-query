@@ -8,8 +8,8 @@
     "php": "^8.5",
     "php-64bit": "*",
     "ext-json": "*",
-    "kumwe/record-values": "dev-agent/extraction-v2-business-data",
-    "kumwe/business-definition": "dev-agent/candidate-sequence-dependency-v2",
+    "kumwe/record-values": "dev-main",
+    "kumwe/business-definition": "dev-main",
     "kumwe/conversion": "0.1.0",
     "ext-mbstring": "*"
   },

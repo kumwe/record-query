@@ -5,13 +5,13 @@
   "dependencies": [
     {
       "package": "kumwe/record-values",
-      "constraint": "dev-agent/extraction-v2-business-data",
+      "constraint": "dev-main",
       "independently_verified": false,
       "attestation": null
     },
     {
       "package": "kumwe/business-definition",
-      "constraint": "dev-agent/candidate-sequence-dependency-v2",
+      "constraint": "dev-main",
       "independently_verified": false,
       "attestation": null
     },
