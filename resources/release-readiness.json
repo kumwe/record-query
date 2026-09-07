@@ -1,13 +1,13 @@
 {
   "status": "blocked",
-  "reason": "Publication needs a recorded stable version and exact stable upstream requirements; Record Values and Business Definition currently resolve from development sources. Independent attestations are optional separate evidence.",
+  "reason": "Source candidate awaiting the actual Record Values stable release and a package release record. Business Definition now uses published 0.1.0; independent attestations remain optional separate evidence.",
   "dependencies": {
     "kumwe/record-values": {
       "version": "dev-main",
       "attestation": null
     },
     "kumwe/business-definition": {
-      "version": "dev-main",
+      "version": "0.1.0",
       "attestation": null
     },
     "kumwe/conversion": {
