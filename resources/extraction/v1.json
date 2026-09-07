@@ -1,0 +1,146 @@
+{
+  "schema": "kumwe-extraction/v1",
+  "package": "kumwe/record-query",
+  "source_baselines": {
+    "app": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "sdk": "e8ec23f155c5836c6bd083f154a8efb6e50aec66"
+  },
+  "symbols": [
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/AggregateFunction.php",
+      "target": "src/AggregateFunction.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/BooleanFilter.php",
+      "target": "src/BooleanFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/BooleanOperator.php",
+      "target": "src/BooleanOperator.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/BusinessRecordCursor.php",
+      "target": "src/BusinessRecordCursor.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/BusinessRecordSearch.php",
+      "target": "src/BusinessRecordSearch.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/BusinessRecordSort.php",
+      "target": "src/BusinessRecordSort.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/ComparisonFilter.php",
+      "target": "src/ComparisonFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/ComparisonOperator.php",
+      "target": "src/ComparisonOperator.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/CursorPosition.php",
+      "target": "src/CursorPosition.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/NullFilter.php",
+      "target": "src/NullFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/QueryCanonicalizer.php",
+      "target": "src/QueryCanonicalizer.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/QueryGraphGuard.php",
+      "target": "src/QueryGraphGuard.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/QueryIdentifier.php",
+      "target": "src/QueryIdentifier.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/QueryValue.php",
+      "target": "src/QueryValue.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordAggregate.php",
+      "target": "src/RecordAggregate.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordCursor.php",
+      "target": "src/RecordCursor.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordFilter.php",
+      "target": "src/RecordFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordProjection.php",
+      "target": "src/RecordProjection.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordQuerySpecification.php",
+      "target": "src/RecordQuerySpecification.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordSearch.php",
+      "target": "src/RecordSearch.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RecordSort.php",
+      "target": "src/RecordSort.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RelationFilter.php",
+      "target": "src/RelationFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/RelationQuantifier.php",
+      "target": "src/RelationQuantifier.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/SetFilter.php",
+      "target": "src/SetFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/SortDirection.php",
+      "target": "src/SortDirection.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/TextFilter.php",
+      "target": "src/TextFilter.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Query/TextOperator.php",
+      "target": "src/TextOperator.php"
+    }
+  ],
+  "release_blocked": true
+}

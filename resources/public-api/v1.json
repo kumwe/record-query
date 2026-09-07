@@ -1,0 +1,1390 @@
+{
+    "schema": "kumwe-public-api/v1",
+    "package": "kumwe/record-query",
+    "release": null,
+    "namespace": "Kumwe\\Record\\Query\\",
+    "symbols": [
+        {
+            "name": "Kumwe\\Record\\Query\\AggregateFunction",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Count",
+                "Sum",
+                "Minimum",
+                "Maximum",
+                "Average"
+            ]
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\BooleanFilter",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "operator",
+                            "type": "Kumwe\\Record\\Query\\BooleanOperator",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "children",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "children",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "operator",
+                    "type": "Kumwe\\Record\\Query\\BooleanOperator",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\BooleanOperator",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "All",
+                "Any",
+                "Not"
+            ]
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\BusinessRecordCursor",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "value",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\BusinessRecordSearch",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\BusinessRecordSort",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "field",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\ComparisonFilter",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "operator",
+                            "type": "Kumwe\\Record\\Query\\ComparisonOperator",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "field",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "operator",
+                    "type": "Kumwe\\Record\\Query\\ComparisonOperator",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "mixed",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\ComparisonOperator",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Equal",
+                "NotEqual",
+                "LessThan",
+                "LessThanOrEqual",
+                "GreaterThan",
+                "GreaterThanOrEqual"
+            ]
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\CursorPosition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "specificationDigest",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sortValues",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "recordKey",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "sortValues",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "specificationDigest",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "recordKey",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\NullFilter",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "isNull",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "field",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "isNull",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\QueryCanonicalizer",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "value",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "mixed"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\QueryIdentifier",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assertField",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\QueryValue",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assert",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "canonical",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "mixed"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordAggregate",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "alias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "function",
+                            "type": "Kumwe\\Record\\Query\\AggregateFunction",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "field",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "alias",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "function",
+                    "type": "Kumwe\\Record\\Query\\AggregateFunction",
+                    "readonly": true
+                },
+                {
+                    "name": "field",
+                    "type": "?string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordCursor",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "fromString",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "token",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Record\\Query\\RecordCursor"
+                },
+                {
+                    "name": "value",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "__toString",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordFilter",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordProjection",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "fields",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includes",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "aggregates",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "fields",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "includes",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "aggregates",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordQuerySpecification",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "filter",
+                            "type": "?Kumwe\\Record\\Query\\RecordFilter",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "search",
+                            "type": "?Kumwe\\Record\\Query\\RecordSearch",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sorts",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "after",
+                            "type": "?Kumwe\\Record\\Query\\RecordCursor",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "pageSize",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "projection",
+                            "type": "?Kumwe\\Record\\Query\\RecordProjection",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includeArchived",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includeDeleted",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "includeCursor",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                {
+                    "name": "digest",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "sorts",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "projection",
+                    "type": "Kumwe\\Record\\Query\\RecordProjection",
+                    "readonly": true
+                },
+                {
+                    "name": "filter",
+                    "type": "?Kumwe\\Record\\Query\\RecordFilter",
+                    "readonly": true
+                },
+                {
+                    "name": "search",
+                    "type": "?Kumwe\\Record\\Query\\RecordSearch",
+                    "readonly": true
+                },
+                {
+                    "name": "after",
+                    "type": "?Kumwe\\Record\\Query\\RecordCursor",
+                    "readonly": true
+                },
+                {
+                    "name": "pageSize",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "includeArchived",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "includeDeleted",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordSearch",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "term",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "fields",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "fields",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "term",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RecordSort",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "direction",
+                            "type": "Kumwe\\Record\\Query\\SortDirection",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "nullsLast",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "field",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "direction",
+                    "type": "Kumwe\\Record\\Query\\SortDirection",
+                    "readonly": true
+                },
+                {
+                    "name": "nullsLast",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RelationFilter",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "relationship",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "quantifier",
+                            "type": "Kumwe\\Record\\Query\\RelationQuantifier",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "target",
+                            "type": "Kumwe\\Record\\Query\\RecordFilter",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "relationship",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "quantifier",
+                    "type": "Kumwe\\Record\\Query\\RelationQuantifier",
+                    "readonly": true
+                },
+                {
+                    "name": "target",
+                    "type": "Kumwe\\Record\\Query\\RecordFilter",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\RelationQuantifier",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Any",
+                "None",
+                "All"
+            ]
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\SetFilter",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "negated",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "values",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "field",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "negated",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\SortDirection",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Ascending",
+                "Descending"
+            ]
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\TextFilter",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "operator",
+                            "type": "Kumwe\\Record\\Query\\TextOperator",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "text",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "operationCount",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "depth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "relationDepth",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "field",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "operator",
+                    "type": "Kumwe\\Record\\Query\\TextOperator",
+                    "readonly": true
+                },
+                {
+                    "name": "text",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Query\\TextOperator",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Contains",
+                "StartsWith",
+                "EndsWith"
+            ]
+        }
+    ]
+}

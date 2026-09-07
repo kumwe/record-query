@@ -1,0 +1,30 @@
+{
+    "schema": "kumwe-record-query-canonical-proof/v1",
+    "source_sdk": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "definition_source": "46c18ab1a0165994e1f6cca7473c319ac6f55dc3",
+    "accepted_vectors": 13,
+    "refused_vectors": 8,
+    "bounds": {
+        "max_depth": 32,
+        "max_collection_entries": 512,
+        "floats": false
+    },
+    "default_query": {
+        "document": {
+            "filter": null,
+            "search": null,
+            "sorts": [],
+            "after": null,
+            "page_size": 50,
+            "projection": {
+                "fields": [],
+                "includes": [],
+                "aggregates": []
+            },
+            "include_archived": false,
+            "include_deleted": false
+        },
+        "canonical": "{\"after\":null,\"filter\":null,\"include_archived\":false,\"include_deleted\":false,\"page_size\":50,\"projection\":{\"aggregates\":[],\"fields\":[],\"includes\":[]},\"search\":null,\"sorts\":[]}",
+        "digest": "eb942870b723bb3034e0576c0762e1e7a766db9ca836e7e76d323904edd16c3f"
+    }
+}
