@@ -128,7 +128,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       },
       {
         "path": "resources/test-ownership/v1.json",
-        "sha256": "131af5ce9b1a0a203ada1b604c68a454dfd1f9d3102db5daf152151859205582"
+        "sha256": "0c18bc6d2920659d2a087b9cfd129ac0252463489b9b84bba275fb860938c8e5"
       }
     ],
     "intentionally_excluded": [
@@ -146,137 +146,164 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/AggregateFunction.php",
-        "target_path": "src/AggregateFunction.php"
+        "target_path": "src/AggregateFunction.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BooleanFilter.php",
-        "target_path": "src/BooleanFilter.php"
+        "target_path": "src/BooleanFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BooleanOperator.php",
-        "target_path": "src/BooleanOperator.php"
+        "target_path": "src/BooleanOperator.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BusinessRecordCursor.php",
-        "target_path": "src/BusinessRecordCursor.php"
+        "target_path": "src/BusinessRecordCursor.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BusinessRecordSearch.php",
-        "target_path": "src/BusinessRecordSearch.php"
+        "target_path": "src/BusinessRecordSearch.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BusinessRecordSort.php",
-        "target_path": "src/BusinessRecordSort.php"
+        "target_path": "src/BusinessRecordSort.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/ComparisonFilter.php",
-        "target_path": "src/ComparisonFilter.php"
+        "target_path": "src/ComparisonFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/ComparisonOperator.php",
-        "target_path": "src/ComparisonOperator.php"
+        "target_path": "src/ComparisonOperator.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/CursorPosition.php",
-        "target_path": "src/CursorPosition.php"
+        "target_path": "src/CursorPosition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/NullFilter.php",
-        "target_path": "src/NullFilter.php"
+        "target_path": "src/NullFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryCanonicalizer.php",
-        "target_path": "src/QueryCanonicalizer.php"
+        "target_path": "src/QueryCanonicalizer.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryGraphGuard.php",
-        "target_path": "src/QueryGraphGuard.php"
+        "target_path": "src/QueryGraphGuard.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryIdentifier.php",
-        "target_path": "src/QueryIdentifier.php"
+        "target_path": "src/QueryIdentifier.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryValue.php",
-        "target_path": "src/QueryValue.php"
+        "target_path": "src/QueryValue.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordAggregate.php",
-        "target_path": "src/RecordAggregate.php"
+        "target_path": "src/RecordAggregate.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordCursor.php",
-        "target_path": "src/RecordCursor.php"
+        "target_path": "src/RecordCursor.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordFilter.php",
-        "target_path": "src/RecordFilter.php"
+        "target_path": "src/RecordFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordProjection.php",
-        "target_path": "src/RecordProjection.php"
+        "target_path": "src/RecordProjection.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordQuerySpecification.php",
-        "target_path": "src/RecordQuerySpecification.php"
+        "target_path": "src/RecordQuerySpecification.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordSearch.php",
-        "target_path": "src/RecordSearch.php"
+        "target_path": "src/RecordSearch.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordSort.php",
-        "target_path": "src/RecordSort.php"
+        "target_path": "src/RecordSort.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RelationFilter.php",
-        "target_path": "src/RelationFilter.php"
+        "target_path": "src/RelationFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RelationQuantifier.php",
-        "target_path": "src/RelationQuantifier.php"
+        "target_path": "src/RelationQuantifier.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/SetFilter.php",
-        "target_path": "src/SetFilter.php"
+        "target_path": "src/SetFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/SortDirection.php",
-        "target_path": "src/SortDirection.php"
+        "target_path": "src/SortDirection.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/TextFilter.php",
-        "target_path": "src/TextFilter.php"
+        "target_path": "src/TextFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/TextOperator.php",
-        "target_path": "src/TextOperator.php"
+        "target_path": "src/TextOperator.php",
+        "extraction_kind": "whole_file"
       }
     ],
     "consumers": {
@@ -338,7 +365,9 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testQueryDigestMatchesFrozenSdkBytes",
           "testNarrowLiteralAdmissionPrecedesCanonicalRecordReduction"
         ],
-        "implementation_owner": "kumwe/record-query"
+        "implementation_owner": "kumwe/record-query",
+        "source_ownership": "new_package_tests",
+        "source_tests": []
       },
       {
         "path": "tests/Case/RecordQueryBoundaryTest.php",
@@ -349,7 +378,24 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testDepthRelationAndOperationBudgetsAreOwnedByTheGrammar",
           "testForeignFilterCannotLieAboutItsComplexityOrExecuteCallbacks"
         ],
-        "implementation_owner": "kumwe/record-query"
+        "implementation_owner": "kumwe/record-query",
+        "source_ownership": "moved_or_adapted",
+        "source_tests": [
+          {
+            "owner": "extension-sdk",
+            "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+            "path": "tests/Case/RecordQueryBoundaryTest.php",
+            "methods": [
+              "testCursorBoundariesPreserveBytesWithoutClaimingAuthentication",
+              "testDigestExcludesOnlyCursorAndCanonicalizesSearchFieldOrder",
+              "testProjectionAndPageLimitsAreInclusiveAndDuplicatesCannotHideCost",
+              "testDepthRelationAndOperationBudgetsAreOwnedByTheGrammar",
+              "testForeignFilterCannotLieAboutItsComplexityOrExecuteCallbacks"
+            ],
+            "retained_methods": [],
+            "remove_whole_file": true
+          }
+        ]
       },
       {
         "path": "tests/Case/RecordQueryGrammarTest.php",
@@ -359,7 +405,23 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testBooleanFilterBoundsItsFanOut",
           "testTextSetAndNullFiltersExportCanonically"
         ],
-        "implementation_owner": "kumwe/record-query"
+        "implementation_owner": "kumwe/record-query",
+        "source_ownership": "moved_or_adapted",
+        "source_tests": [
+          {
+            "owner": "extension-sdk",
+            "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+            "path": "tests/Case/RecordQueryGrammarTest.php",
+            "methods": [
+              "testQueryValuesAreBoundedTypedScalars",
+              "testComparisonFilterRefusesApproximateAndNullLiterals",
+              "testBooleanFilterBoundsItsFanOut",
+              "testTextSetAndNullFiltersExportCanonically"
+            ],
+            "retained_methods": [],
+            "remove_whole_file": true
+          }
+        ]
       }
     ],
     "remain_in_app_or_consumer": [
@@ -417,137 +479,164 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/AggregateFunction.php",
-        "target_path": "src/AggregateFunction.php"
+        "target_path": "src/AggregateFunction.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BooleanFilter.php",
-        "target_path": "src/BooleanFilter.php"
+        "target_path": "src/BooleanFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BooleanOperator.php",
-        "target_path": "src/BooleanOperator.php"
+        "target_path": "src/BooleanOperator.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BusinessRecordCursor.php",
-        "target_path": "src/BusinessRecordCursor.php"
+        "target_path": "src/BusinessRecordCursor.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BusinessRecordSearch.php",
-        "target_path": "src/BusinessRecordSearch.php"
+        "target_path": "src/BusinessRecordSearch.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/BusinessRecordSort.php",
-        "target_path": "src/BusinessRecordSort.php"
+        "target_path": "src/BusinessRecordSort.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/ComparisonFilter.php",
-        "target_path": "src/ComparisonFilter.php"
+        "target_path": "src/ComparisonFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/ComparisonOperator.php",
-        "target_path": "src/ComparisonOperator.php"
+        "target_path": "src/ComparisonOperator.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/CursorPosition.php",
-        "target_path": "src/CursorPosition.php"
+        "target_path": "src/CursorPosition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/NullFilter.php",
-        "target_path": "src/NullFilter.php"
+        "target_path": "src/NullFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryCanonicalizer.php",
-        "target_path": "src/QueryCanonicalizer.php"
+        "target_path": "src/QueryCanonicalizer.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryGraphGuard.php",
-        "target_path": "src/QueryGraphGuard.php"
+        "target_path": "src/QueryGraphGuard.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryIdentifier.php",
-        "target_path": "src/QueryIdentifier.php"
+        "target_path": "src/QueryIdentifier.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/QueryValue.php",
-        "target_path": "src/QueryValue.php"
+        "target_path": "src/QueryValue.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordAggregate.php",
-        "target_path": "src/RecordAggregate.php"
+        "target_path": "src/RecordAggregate.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordCursor.php",
-        "target_path": "src/RecordCursor.php"
+        "target_path": "src/RecordCursor.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordFilter.php",
-        "target_path": "src/RecordFilter.php"
+        "target_path": "src/RecordFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordProjection.php",
-        "target_path": "src/RecordProjection.php"
+        "target_path": "src/RecordProjection.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordQuerySpecification.php",
-        "target_path": "src/RecordQuerySpecification.php"
+        "target_path": "src/RecordQuerySpecification.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordSearch.php",
-        "target_path": "src/RecordSearch.php"
+        "target_path": "src/RecordSearch.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RecordSort.php",
-        "target_path": "src/RecordSort.php"
+        "target_path": "src/RecordSort.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RelationFilter.php",
-        "target_path": "src/RelationFilter.php"
+        "target_path": "src/RelationFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/RelationQuantifier.php",
-        "target_path": "src/RelationQuantifier.php"
+        "target_path": "src/RelationQuantifier.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/SetFilter.php",
-        "target_path": "src/SetFilter.php"
+        "target_path": "src/SetFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/SortDirection.php",
-        "target_path": "src/SortDirection.php"
+        "target_path": "src/SortDirection.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/TextFilter.php",
-        "target_path": "src/TextFilter.php"
+        "target_path": "src/TextFilter.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Query/TextOperator.php",
-        "target_path": "src/TextOperator.php"
+        "target_path": "src/TextOperator.php",
+        "extraction_kind": "whole_file"
       }
     ],
     "files_to_update": [
@@ -588,9 +677,33 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       "src/Spi/BusinessRecord/Query/TextOperator.php"
     ],
     "tests_to_remove": [
-      "tests/Case/CanonicalSemanticsTest.php",
-      "tests/Case/RecordQueryBoundaryTest.php",
-      "tests/Case/RecordQueryGrammarTest.php"
+      {
+        "owner": "extension-sdk",
+        "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "path": "tests/Case/RecordQueryBoundaryTest.php",
+        "methods": [
+          "testCursorBoundariesPreserveBytesWithoutClaimingAuthentication",
+          "testDigestExcludesOnlyCursorAndCanonicalizesSearchFieldOrder",
+          "testProjectionAndPageLimitsAreInclusiveAndDuplicatesCannotHideCost",
+          "testDepthRelationAndOperationBudgetsAreOwnedByTheGrammar",
+          "testForeignFilterCannotLieAboutItsComplexityOrExecuteCallbacks"
+        ],
+        "retained_methods": [],
+        "remove_whole_file": true
+      },
+      {
+        "owner": "extension-sdk",
+        "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "path": "tests/Case/RecordQueryGrammarTest.php",
+        "methods": [
+          "testQueryValuesAreBoundedTypedScalars",
+          "testComparisonFilterRefusesApproximateAndNullLiterals",
+          "testBooleanFilterBoundsItsFanOut",
+          "testTextSetAndNullFiltersExportCanonically"
+        ],
+        "retained_methods": [],
+        "remove_whole_file": true
+      }
     ],
     "tests_to_retain_or_add": [
       "Host responsibility cases listed above",
