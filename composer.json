@@ -9,7 +9,7 @@
     "php-64bit": "*",
     "ext-json": "*",
     "kumwe/record-values": "dev-main",
-    "kumwe/business-definition": "dev-main",
+    "kumwe/business-definition": "0.1.0",
     "kumwe/conversion": "0.1.0",
     "ext-mbstring": "*"
   },
@@ -86,15 +86,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/kumwe/business-definition.git"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/kumwe/record-values.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/sequence.git"
     }
   ],
   "minimum-stability": "dev",
