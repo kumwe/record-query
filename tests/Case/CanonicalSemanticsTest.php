@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Kumwe\Record\Query\Tests\Case;
 
 use InvalidArgumentException;
+use Kumwe\Record\Query\ComparisonFilter;
+use Kumwe\Record\Query\ComparisonOperator;
 use Kumwe\Record\Query\QueryCanonicalizer;
 use Kumwe\Record\Query\RecordQuerySpecification;
 use Kumwe\Record\Query\Tests\TestCase;
@@ -41,12 +43,23 @@ final class CanonicalSemanticsTest extends TestCase
             QueryCanonicalizer::value(new \DateTimeImmutable('2024-02-29T10:00:00.123456+02:00')),
             'Date precision and offset retained.'
         );
-        foreach ([[],1.5,new \stdClass(),str_repeat('a', 4097),"\xff"] as $value) {
+        foreach ([[],1.5,new \stdClass(),str_repeat('a', 4097)] as $value) {
             $this->assertThrows(
                 static fn()=>QueryCanonicalizer::value($value),
                 InvalidArgumentException::class,
                 'Unsupported literal refused before digest.'
             );
         }
+        $this->assertSame(
+            "\xff",
+            QueryCanonicalizer::value("\xff"),
+            'Admitted PHP string bytes are preserved until canonical JSON encoding.'
+        );
+        $query = new RecordQuerySpecification(new ComparisonFilter('name', ComparisonOperator::Equal, "\xff"));
+        $this->assertThrows(
+            static fn () => $query->digest(),
+            InvalidArgumentException::class,
+            'The query digest refuses strings that canonical JSON cannot encode.'
+        );
     }
 }
