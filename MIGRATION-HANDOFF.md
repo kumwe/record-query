@@ -67,15 +67,15 @@ source:
       manifest_or_corpus: "resources/extraction/v1.json"
       sha256: "d8d9d10be869b3faeb7ef6c776c9ef26487126085c1f882886c82c292947c175"
   examined_dependencies:
-    - "kumwe/record-values 0.1.3; independent release attestation not asserted"
+    - "kumwe/record-values 0.1.4; independent release attestation not asserted"
     - "kumwe/business-definition 0.1.2; independent release attestation not asserted"
-    - "kumwe/conversion 0.1.4; independent release attestation not asserted"
+    - "kumwe/conversion 0.1.5; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/record-query"
   artifact_identity: "kumwe/record-query"
   canonical_namespace_or_abi: "Kumwe\\Record\\Query\\"
-  branch: "fix/integration-readiness"
+  branch: "fix/final-governed-dependencies"
   pull_request: "https://github.com/kumwe/record-query/pull/6"
 ownership:
   responsibility: "Closed bounded business record query grammar, projections and deterministic canonicalization."
@@ -100,13 +100,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "6b9bf90b431153e52255307f1819213ae43223c77328e5add4b9eb3e5b93527f"
+      sha256: "8757ea552ed1b1f89cbc0accb82daab1cb9ad3091f9b5b6a219473af253e60ec"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "62d6b11a0e9852922633ca57d1f5c9b4f2b1b2caaa53a04a9ba36f59cd12aae4"
+      sha256: "d7ee277a5acbdc59fcb5588efb2d5fe62406c822e4718a179997eb61ad394620"
     -
       path: "resources/service-map/v1.json"
-      sha256: "cf5a55d5666483b8a9676c9399d4db1f4386e32a2029649a85da9d2fe21b5fe8"
+      sha256: "86d96e1265d9e9681fc59b94b67f1b87854323f6a65d2018d7aa2f46822eaf08"
     -
       path: "resources/test-ownership/v1.json"
       sha256: "08bdae130eb5b0e360c30cfdb8680ab1440b4c2c7abc7fef4a2b07abc12afcaf"
@@ -675,6 +675,7 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
+    - "tools/schema-validator/verify.cjs: complete canonical manifest and handoff schemas with 12 rejection fixtures"
     - "tests/Case/CanonicalSemanticsTest.php (testQueryDigestMatchesFrozenSdkBytes, testNarrowLiteralAdmissionPrecedesCanonicalRecordReduction, testQueryCollectionsCannotChangeAfterAdmission); provenance: resources/test-ownership/v1.json"
     - "tests/Case/RecordQueryBoundaryTest.php (testCursorBoundariesPreserveBytesWithoutClaimingAuthentication, testDigestExcludesOnlyCursorAndCanonicalizesSearchFieldOrder, testProjectionAndPageLimitsAreInclusiveAndDuplicatesCannotHideCost, testDepthRelationAndOperationBudgetsAreOwnedByTheGrammar, testForeignFilterCannotLieAboutItsComplexityOrExecuteCallbacks); provenance: resources/test-ownership/v1.json"
     - "tests/Case/RecordQueryGrammarTest.php (testQueryValuesAreBoundedTypedScalars, testComparisonFilterRefusesApproximateAndNullLiterals, testBooleanFilterBoundsItsFanOut, testTextSetAndNullFiltersExportCanonically); provenance: resources/test-ownership/v1.json"
@@ -698,9 +699,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.1.2"
+  changelog_record: "CHANGELOG.md / 0.1.3"
 release_expectations:
-  version_policy: "SemVer maintenance release 0.1.2 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
+  version_policy: "SemVer maintenance release 0.1.3 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
   expected_artifact_types:
     - "Composer source zip"
   required_checks:
@@ -821,7 +822,7 @@ decisions:
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.2 readiness candidate requires maintainer review and merge. Version 0.1.1 has already been published."
+  - "The 0.1.3 schema/dependency successor requires maintainer review and merge. Version 0.1.2 is already published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
 ---
 
@@ -900,7 +901,7 @@ are listed separately; the adoption review must also resolve dynamically compose
 
 ## Dependency readiness update — 0.1.2
 
-The 0.1.1 release is published. This candidate uses `kumwe/record-values 0.1.3`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.4`.
+The 0.1.1 release is published. This candidate uses `kumwe/record-values 0.1.4`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.5`.
 The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
 regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
 remain an explicit absence of independent verification, not a completed adoption claim.
@@ -908,4 +909,6 @@ remain an explicit absence of independent verification, not a completed adoption
 Maintainer merge, final release publication and independent artifact/dependency verification remain
 required before downstream adoption. No App implementation or integration changes are included.
 
-Final coordinated dependency tuple: `kumwe/record-values 0.1.3`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.4`. These versions were observed published before pinning. Full source/archive gates and independent final-release verification remain required; App/core integration is a separate later task.
+Final coordinated dependency tuple: `kumwe/record-values 0.1.4`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.5`. These versions were observed published before pinning. Full source/archive gates and independent final-release verification remain required; App/core integration is a separate later task.
+
+The 0.1.3 successor selects the published schema-valid dependency tuple: `kumwe/business-definition 0.1.2`, `kumwe/record-values 0.1.4`, `kumwe/conversion 0.1.5`. All complete authoritative schemas and twelve refusal cases are mandatory source/release checks. Earlier releases remain unchanged. Runtime/API behavior is preserved, and App/core integration remains a separate later step.
