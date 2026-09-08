@@ -67,8 +67,8 @@ source:
       manifest_or_corpus: "resources/extraction/v1.json"
       sha256: "d8d9d10be869b3faeb7ef6c776c9ef26487126085c1f882886c82c292947c175"
   examined_dependencies:
-    - "kumwe/record-values 0.1.1; independent release attestation not asserted"
-    - "kumwe/business-definition 0.1.1; independent release attestation not asserted"
+    - "kumwe/record-values 0.1.2; independent release attestation not asserted"
+    - "kumwe/business-definition 0.1.2; independent release attestation not asserted"
     - "kumwe/conversion 0.1.3; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
@@ -900,7 +900,7 @@ are listed separately; the adoption review must also resolve dynamically compose
 
 ## Dependency readiness update — 0.1.2
 
-The 0.1.1 release is published. This candidate uses `kumwe/record-values 0.1.1`, `kumwe/business-definition 0.1.1`, `kumwe/conversion 0.1.3`.
+The 0.1.1 release is published. This candidate uses `kumwe/record-values 0.1.2`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.3`.
 The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
 regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
 remain an explicit absence of independent verification, not a completed adoption claim.
