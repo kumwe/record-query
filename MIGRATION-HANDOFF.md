@@ -76,7 +76,7 @@ target:
   artifact_identity: "kumwe/record-query"
   canonical_namespace_or_abi: "Kumwe\\Record\\Query\\"
   branch: "fix/final-governed-dependencies"
-  pull_request: "https://github.com/kumwe/record-query/pull/6"
+  pull_request: "https://github.com/kumwe/record-query/pull/7"
 ownership:
   responsibility: "Closed bounded business record query grammar, projections and deterministic canonicalization."
   non_responsibilities:
