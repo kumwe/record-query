@@ -1,7 +1,7 @@
 {
     "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/record-query",
-    "release": "0.1.1",
+    "release": "0.1.2",
     "namespace": "Kumwe\\Record\\Query\\",
     "responsibility": "Closed bounded business record query grammar, projections and deterministic canonicalization.",
     "non_responsibilities": [
