@@ -1,9 +1,8 @@
 ---
-schema: "kumwe-migration-handoff/v2"
+schema: "kumwe-package-release-record/v1"
 artifact_kind: "framework_php"
 migration_id: "KUMWE-MIG-2026-031"
 change_set: "KUMWE-CS-2026-031"
-state: "draft_pr_open"
 source:
   app:
     repository: "https://github.com/kumwe/app"
@@ -70,13 +69,10 @@ source:
     - "kumwe/record-values 0.1.4; independent release attestation not asserted"
     - "kumwe/business-definition 0.1.2; independent release attestation not asserted"
     - "kumwe/conversion 0.1.5; independent release attestation not asserted"
-  active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/record-query"
   artifact_identity: "kumwe/record-query"
   canonical_namespace_or_abi: "Kumwe\\Record\\Query\\"
-  branch: "fix/final-governed-dependencies"
-  pull_request: "https://github.com/kumwe/record-query/pull/7"
 ownership:
   responsibility: "Closed bounded business record query grammar, projections and deterministic canonicalization."
   non_responsibilities:
@@ -675,7 +671,7 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
-    - "tools/schema-validator/verify.cjs: complete canonical manifest and handoff schemas with 12 rejection fixtures"
+    - "tools/schema-validator/verify.cjs: complete canonical manifest and release-record schemas with 15 rejection fixtures"
     - "tests/Case/CanonicalSemanticsTest.php (testQueryDigestMatchesFrozenSdkBytes, testNarrowLiteralAdmissionPrecedesCanonicalRecordReduction, testQueryCollectionsCannotChangeAfterAdmission); provenance: resources/test-ownership/v1.json"
     - "tests/Case/RecordQueryBoundaryTest.php (testCursorBoundariesPreserveBytesWithoutClaimingAuthentication, testDigestExcludesOnlyCursorAndCanonicalizesSearchFieldOrder, testProjectionAndPageLimitsAreInclusiveAndDuplicatesCannotHideCost, testDepthRelationAndOperationBudgetsAreOwnedByTheGrammar, testForeignFilterCannotLieAboutItsComplexityOrExecuteCallbacks); provenance: resources/test-ownership/v1.json"
     - "tests/Case/RecordQueryGrammarTest.php (testQueryValuesAreBoundedTypedScalars, testComparisonFilterRefusesApproximateAndNullLiterals, testBooleanFilterBoundsItsFanOut, testTextSetAndNullFiltersExportCanonically); provenance: resources/test-ownership/v1.json"
@@ -712,8 +708,7 @@ release_expectations:
     - "immutable release and source/artifact manifests independently attested"
   required_registry_or_installer: "Composer"
   required_external_attestation: true
-next_task:
-  phase_name: "Independent release verification, followed by separate App adoption"
+consumer_contract:
   permitted_only_when:
     - "Human merges package PR"
     - "Immutable upstream dependency releases and target release are independently verified"
@@ -798,117 +793,72 @@ next_task:
     - "composer check"
     - "composer clean-consumer"
     - "App affected integration train and platform matrix"
-concurrency:
-  likely_conflict_files:
-    - "App composer.json"
-    - "App composer.lock"
-    - "App capability and migration registries"
-  related_migrations:
-    - "KUMWE-MIG-2026-029"
-    - "KUMWE-MIG-2026-030"
-    - "KUMWE-MIG-2026-032"
-    - "KUMWE-MIG-2026-033"
-  ownership_conflicts: []
-  integration_train: null
-  resolution_rule: "semantic-preservation"
 governance:
-  roadmap_source_sha256: "a202155ef1a65f5ab293d4f8397ebf4ac430db7f1e877c776bbe7851e6fe18d8"
-  roadmap_refs: []
-  non_roadmap_refs:
-    - "NRM-2026-031"
   completion_claim: false
 decisions:
   - "Canonical namespace and approved value behavior retained."
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.3 schema/dependency successor requires maintainer review and merge. Version 0.1.2 is already published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
 ---
 
-# Migration handoff
+# Record Query release record
 
-## Migration/implementation summary
+This record binds source ownership, public manifests, consumer mappings and test
+responsibilities. Baseline paths are compatibility evidence; consumers reconcile
+them against current Core before replacing implementations.
 
-The published 0.1.0 package owns the portable source listed in the machine inventory.
-The published 0.1.1 maintenance release completes immutable input snapshots, current release
-metadata and consumer-readable governance records. App adoption is a separate phase.
+## Package contract
+
+The package owns a closed bounded query grammar, projections and deterministic
+canonicalization. Core owns authorization, trusted definitions, database execution,
+field disclosure enforcement, cursor signing secrets, persistence and delivery.
 
 ## Public API and responsibility
 
-The canonical namespace, exported signatures and service lifetimes are recorded in
-the three resources manifests. See CHARTER.md, docs/public-api.md and docs/architecture.md
-for invariants and the boundary between package semantics and host authority.
+See [public API](public-api.md), [architecture](architecture.md) and canonical manifests.
+Values use direct construction. Filter sets, cursor positions, projections and sort
+collections detach caller references, preserving admitted query/disclosure intent.
+A validated specification or digest is not an authorization decision.
 
-## Capability reuse/semantic input review
+## Dependencies and semantic inputs
 
-The semantic inputs and exact dependency requirements above identify reused owners.
-No development branch or moving latest version is a release dependency. Published
-transitive exact pins constrain updates until the prerequisite maintenance release exists.
+Record Values owns shared normalization, Business Definition owns definition semantics,
+and Conversion owns numeric conversion. Exact versions are declared in Composer.
+The canonical conformance proof compares frozen SDK and definition encoders over
+13 accepted and eight refused inputs, retaining no-float, depth32, width512 and UTF-8
+boundaries. Query literals keep narrower admission before shared normalization.
 
-## Consumer inventory
+## Consumer contract
 
-The framework_php.consumers inventory records App code, configuration and external
-consumers. Those paths remain read-only during Phase 1; the integration task must
-repeat the inventory against its chosen App commit before deleting legacy classes.
+Core supplies authorized scope and definitions, compiles validated queries, applies
+access and field permissions before reads, counts, paging, aggregates and exports,
+and owns cursor integrity and replay binding. The package exports neither SQL
+execution nor signing secrets. See [integration](integration.md).
 
 ## Test ownership
 
-Library behavior and regression tests live under tests/ and are indexed in
-resources/test-ownership/v1.json. The machine test inventory preserves the source
-provenance and separates host acceptance work from portable library behavior.
+Package tests own grammar admission, canonical bytes, bounded query values, immutability
+and conformance. The [test ownership contract](test-ownership.md) and resource manifest
+retain source provenance. Core keeps database, query-isolation, disclosure, cursor
+security, policy-change, transaction and delivery integration tests.
 
-## Next-task execution notes
+## Consumer verification
 
-Review and merge this maintenance candidate, publish and independently verify its
-release, then use docs/integration.md with the machine execution inventory for App
-adoption. Native parity and host integration cannot be inferred from package unit tests.
+Independently verify exact package/dependency releases, source identities, archives
+and manifest digests. Run affected Core integration suites after composition. Scan
+current imports, signatures, configuration, escaped strings, fixtures and dynamically
+composed names before removing duplicate implementations.
 
-## Drift check
+## Compatibility and drift
 
-The source baseline and source paths remain explicit in this record. Manifest
-digests are regenerated together with the public signatures and reviewed test inventory.
-Repeat the source/consumer inventory and dependency solve before integration.
+Grammar, canonical query bytes, value admission and projection meaning are compatibility
+contracts. Reconcile recorded sources and tests with current Core, preserving newer
+portable behavior upstream and host-specific authority locally. Release evidence is immutable.
 
-## Validation recipe and observed local results
+## Validation
 
-Run composer check and composer clean-consumer from a clean checkout. The local
-unit and static-analysis gates passed during the maintenance review; release automation
-and the clean consumer must pass for the final reviewed commit before publication.
-The App v2 governance parser was also used read-only to verify all three manifests
-and this handoff against the actual consumer contract.
-
-
-## Maintenance review 2026-09-07
-
-The portable source closure and package-owned conformance corpus remain in this library.
-New behavior and immutability regression tests are recorded in the test ownership manifest.
-Completed extraction instructions now describe shipped behavior; host composition, database
-acceptance and App deletion steps remain in the separate adoption handoff above.
-
-Exact dependency pins remain intentional. Business Definition and Record Values maintenance
-releases must be published and verified before their dependent libraries can advance together.
-A moving latest constraint cannot resolve incompatible exact pre-1.0 transitive requirements.
-
-Integration train description: Framework 4 Business Data
-
-
-
-The consumer inventory was recomputed against App 24ecf956423c18933e824b43cea1bfb9127a79a9
-by searching tracked PHP, JSON, YAML, XML, JavaScript and TypeScript for the historical
-fully qualified symbols and their escaped string forms. Configuration and fixtures
-are listed separately; the adoption review must also resolve dynamically composed names.
-
-## Dependency readiness update — 0.1.2
-
-The 0.1.1 release is published. This candidate uses `kumwe/record-values 0.1.4`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.5`.
-The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
-regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
-remain an explicit absence of independent verification, not a completed adoption claim.
-
-Maintainer merge, final release publication and independent artifact/dependency verification remain
-required before downstream adoption. No App implementation or integration changes are included.
-
-Final coordinated dependency tuple: `kumwe/record-values 0.1.4`, `kumwe/business-definition 0.1.2`, `kumwe/conversion 0.1.5`. These versions were observed published before pinning. Full source/archive gates and independent final-release verification remain required; App/core integration is a separate later task.
-
-The 0.1.3 successor selects the published schema-valid dependency tuple: `kumwe/business-definition 0.1.2`, `kumwe/record-values 0.1.4`, `kumwe/conversion 0.1.5`. All complete authoritative schemas and twelve refusal cases are mandatory source/release checks. Earlier releases remain unchanged. Runtime/API behavior is preserved, and App/core integration remains a separate later step.
+Install the pinned Node schema toolchain and run `composer check`. Complete schema
+validation, refusal fixtures, PHP behavior/static checks, governance, audit, dependency
+identity, release tests and no-dev authoritative archive consumption verify the source.

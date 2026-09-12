@@ -1,17 +1,68 @@
-# record-query
+# Kumwe Record Query
 
-Closed bounded business record query grammar, projections and deterministic canonicalization.
+[![Packagist version][version-badge]][package]
+[![CI][ci-badge]][ci]
+[![PHP requirement][php-badge]](composer.json)
+[![License][license-badge]](LICENSE)
 
-Canonical namespace: `Kumwe\Record\Query`. Requires PHP 8.5, 64-bit. Version 0.1.0 has been published; this branch prepares the 0.1.1 maintenance release. App integration follows independent verification of the final release and its handoff.
+Closed bounded record query grammar, projections and deterministic canonicalization
+under `Kumwe\Record\Query`.
 
-Pure values and stateless normalization are constructed directly. No empty container provider is registered. Services with real collaborators receive explicit factories when introduced.
+## Installation
 
-See [public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md) and [test ownership](docs/test-ownership.md).
+Requires 64-bit PHP 8.5 with JSON and mbstring. Pin an exact pre-1.0 release:
 
-For standalone verification, run `composer install` and `composer check`; see `docs/integration.md`. `composer clean-consumer` verifies the archive in a fresh no-dev classmap-authoritative consumer. License: Apache-2.0.
+```sh
+composer require kumwe/record-query:0.1.3
+```
 
-Maintenance release: Detach filter sets, cursor positions, projections and sort collections from caller references so admitted queries and disclosure intent cannot change after validation.
+Composer declares exact Record Values, Business Definition and Conversion requirements.
+The version badge links published packages; CI reports default-branch package checks.
+Core integration and independent release verification remain consumer responsibilities.
 
-Direct Kumwe dependencies use exact stable versions. Dependabot proposes grouped weekly Composer updates; review and merge only after the complete package gate passes. The downstream App consumes a verified exact release, never an unreviewed moving `latest` constraint.
+## Usage and Core contract
 
-Source quality checks require Node.js 20+ and `npm ci --prefix tools/schema-validator --ignore-scripts`. The pinned Ajv2020/YAML gate validates all three canonical manifests and the complete handoff against authoritative schema snapshots, with rejection regressions. These development tools are excluded from consumer archives.
+```php
+require 'vendor/autoload.php';
+
+$query = new \Kumwe\Record\Query\RecordQuerySpecification();
+$fingerprint = $query->digest();
+```
+
+Construct query values directly. Filter sets, cursor positions, projections and sort
+collections detach caller references so admitted intent remains stable. Core supplies
+authorized scope and trusted definitions, compiles queries for its database, and
+applies access and field permissions before reads, counts, paging, aggregates and
+exports. Cursor signing secrets, integrity/replay binding and execution remain with
+Core. A valid query or digest does not authorize access.
+
+See [public API](docs/public-api.md), [architecture](docs/architecture.md),
+[integration](docs/integration.md), [test ownership](docs/test-ownership.md),
+[release record](docs/release-record.md) and [standalone consumer](examples/consumer.php).
+The [canonical conformance proof](resources/canonical-conformance.json) preserves
+shared encoder boundaries while query literal admission remains stricter.
+
+## Development
+
+Requires Node.js 20+ for development schema validation:
+
+```sh
+npm ci --prefix tools/schema-validator --ignore-scripts
+composer install
+composer check
+```
+
+Complete Ajv2020/YAML schema and rejection checks run alongside PHP behavior,
+conformance, architecture, static analysis, manifests/governance, audit, dependency
+identity, release automation and a no-dev authoritative archive consumer. CI runs
+PHP 8.5 on Linux. Development schema tooling is excluded from consumer archives.
+
+Published tags remain fixed. See [releasing](docs/releasing.md) and [changelog](CHANGELOG.md).
+Licensed under [Apache-2.0](LICENSE).
+
+[version-badge]: https://img.shields.io/packagist/v/kumwe/record-query
+[package]: https://packagist.org/packages/kumwe/record-query
+[ci-badge]: https://img.shields.io/github/actions/workflow/status/kumwe/record-query/ci.yml?branch=main
+[ci]: https://github.com/kumwe/record-query/actions/workflows/ci.yml
+[php-badge]: https://img.shields.io/packagist/php-v/kumwe/record-query
+[license-badge]: https://img.shields.io/packagist/l/kumwe/record-query
