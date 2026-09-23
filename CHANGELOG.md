@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4
+
+- Move the release-record ledger identifiers from KUMWE-MIG-2026-031 / KUMWE-CS-2026-031 to KUMWE-MIG-2026-039 / KUMWE-CS-2026-039: the former pair is already claimed by kumwe/conversion 0.1.5, and the App ledger refuses a colliding identifier rather than renumbering.
+- Retain runtime source, public API, manifest symbol content and the exact published dependency tuple unchanged; only the release identity and the record identifiers move.
+
 ## 0.1.3
 
 - Select the corrected published v2 governance dependency tuple and retain the previous release unchanged.
